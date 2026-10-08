@@ -1,11 +1,13 @@
 import ProductCard from "@/app/Component/ProductCard";
+import ShortBy from "@/app/Component/ShortBy";
 import { Product } from "@/type";
 
 
+
 interface Params{
-    params:{
+    params:Promise<{
         categoryId:string
-    }
+    }>
 }
 
 interface CategoryProduct{
@@ -42,10 +44,7 @@ const CategoryPage =async ({params}:Params) => {
      
    const categories = await getCategory()
        
-        
-   
-
-    const currentCategory= categories.find((category:CategoryProduct)=> category.slug===categoryId)
+  const currentCategory= categories.find((category:CategoryProduct)=> category.slug===categoryId)
    console .log(currentCategory)
    if(!currentCategory){
     return <div>Category not Found</div>
@@ -68,9 +67,16 @@ const CategoryPage =async ({params}:Params) => {
                 </div>
             </div>
 
-            <div className=" grid grid-cols-3 gap-5 mt-10">
-                {catagoryProducts.map((product:Product)=> <ProductCard key={product.id} product={product}/>)}
+            {/* Short By */}
+            <div>
+               <ShortBy catagoryProducts={catagoryProducts}></ShortBy>
+
             </div>
+
+            {/* Product Cards */}
+            {/* <div className=" grid grid-cols-3 gap-5 mt-10">
+                {catagoryProducts.map((product:Product)=> <ProductCard key={product.id} product={product}/>)}
+            </div> */}
 
           
           

@@ -7,8 +7,8 @@ export interface Product{
   categoryIcon:string,
   unit:string,
   image: string,
-  today: string,
-  yesterday: string,
+  today: number,
+  yesterday: number,
   lastWeek: number,
   lastMonth:number ,
   change: {
