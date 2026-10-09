@@ -62,9 +62,11 @@ const ProductDetailPage =async ({params}:PParams) => {
                 </Link>
                 
                 <span className="text-[14px] text-[#323934]">❯</span>
-                <Link href={`/Category/${product.slug}`}>
+                <Link href={`/Category/${product.category}`}>
+                
                 <span className="text-[14px] text-[#323934]">{product.categoryNameBn}</span>
                 </Link>
+                
                 
                 <span className="text-[14px] text-[#323934]">❯</span>
                 <span className="text-[14px] text-[#323934]">{product.nameBn}</span>

@@ -18,7 +18,7 @@ const ProductCard = ({product}:{product:Product}) => {
       {/* Product information */}
                 <div className="flex items-center gap-2">
                     {/* Product Icon */}
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-2xl">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bggray-50 text-2xl">
                     {product.categoryIcon}
                     </div>
 
@@ -35,7 +35,7 @@ const ProductCard = ({product}:{product:Product}) => {
                 </div>
 
       {/* Bottom section */}
-                <div className="mt-6 flex items-end justify-between">
+                <div className="mt-4 flex items-end justify-between ml-5">
                     {/* Price */}
                     <div>
                     <p className="text-xs text-gray-600">আজকের দাম</p>

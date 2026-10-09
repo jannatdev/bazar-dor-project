@@ -1,6 +1,6 @@
-import ProductCard from "@/app/Component/ProductCard";
+
 import ShortBy from "@/app/Component/ShortBy";
-import { Product } from "@/type";
+
 
 
 
@@ -38,8 +38,13 @@ const CategoryPage =async ({params}:Params) => {
     const res = await fetch('https://api.api-store.workers.dev/api/bazardor/categories',{
         cache:"force-cache"
     });
+    
+    if(!res.ok){
+        throw new Error("Failed to fetched categories")
+    }
     const data =await res.json();
     return data;
+    
 }
      
    const categories = await getCategory()
