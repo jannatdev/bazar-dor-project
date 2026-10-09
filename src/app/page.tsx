@@ -30,7 +30,7 @@ export default async function Home() {
               <h2 className="text-[20px] font-bold">আজ দাম বেড়েছে</h2>
 
           </div>
-          <div className="grid grid-cols-3 gap-5 mt-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
             {
               upProducts.slice(0,6).map((product:Product)=> <ProductCard key={product.id} product={product}/>)
             }
@@ -45,7 +45,7 @@ export default async function Home() {
               <h2 className="text-[20px] font-bold">আজ দাম কমেছে</h2>
 
           </div>
-          <div className="grid grid-cols-3 gap-5 mt-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
             {
               downProducts.slice(0,6).map((product:Product)=> <ProductCard key={product.id} product={product}/>)
             }
@@ -61,7 +61,7 @@ export default async function Home() {
               <p>মোট {products.length}টি পণ্য দেখানো হচ্ছে</p>
 
           </div>
-          <div className="grid grid-cols-3 gap-5 mt-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
             {
               products.map((product:Product)=> <ProductCard key={product.id} product={product}/>)
             }

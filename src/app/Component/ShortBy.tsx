@@ -30,7 +30,7 @@ const ShortBy = ({catagoryProducts}:{catagoryProducts:Product[]}) => {
                 
 
                 <div className='max-w-7xl mx-auto '>
-                    <div className=' bg-white my-10 py-6 px-4 text-right'>
+                    <div className=' bg-white my-10 py-6 px-4 text-center md:text-right'>
                          <button className='mr-4'>সাজান</button>
                          <select defaultValue="ডিফল্ট"
                             value={shortby}
@@ -48,7 +48,7 @@ const ShortBy = ({catagoryProducts}:{catagoryProducts:Product[]}) => {
                    
                     
 
-                    <div className=" grid grid-cols-3 gap-5 mt-10 ">
+                    <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 ">
                         {shortedCategoryProducts.map(shortProduct=> <ProductCard key={shortProduct.id} product={shortProduct}/>)}
                     </div>
                 </div>

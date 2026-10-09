@@ -20,14 +20,17 @@ const Marquee = async() => {
     
 
     return (
+
+        
         <div className='bg-white'>
-            <MarqueeText className=' ' direction='right' duration={20}>
+           
+               <MarqueeText className=' ' direction='right' duration={20}>
             {
                 headlines.map(product=> {
                       const isUp= product.change.dir ==="up";
 
                       return(
-                        <Link  key={product.id} href={'/'} className='border border-gray-200 py-4 '>
+                        <Link  key={product.id} href={`/Products/${product.slug}`} className='border border-gray-200 py-4 '>
 
                    
                             <span>{product.image}</span>
@@ -58,6 +61,8 @@ const Marquee = async() => {
             }
       
           </MarqueeText>
+          
+           
         </div>
     );
 };

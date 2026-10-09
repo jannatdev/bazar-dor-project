@@ -73,10 +73,7 @@ const CategoryPage =async ({params}:Params) => {
 
             </div>
 
-            {/* Product Cards */}
-            {/* <div className=" grid grid-cols-3 gap-5 mt-10">
-                {catagoryProducts.map((product:Product)=> <ProductCard key={product.id} product={product}/>)}
-            </div> */}
+           
 
           
           

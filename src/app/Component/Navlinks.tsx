@@ -21,8 +21,31 @@ const Navlinks = async () => {
     
     const navs:Navs[]= await getCategory() ;
     return (
-        <div className="mt-6 border border-t border-gray-200 py-4">
-            <div >
+        <div className="max-w-7xl mx-auto" >
+
+            <div className=" block md:hidden">
+                
+                <button className="btn" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" } }>
+                সব ক্যাটাগরি
+                </button>
+
+                <ul className="dropdown menu w-25 rounded-box bg-base-100 shadow-sm"
+                popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" }  }>
+                     {
+                navs.map((nav)=> <Link key={nav.id} href={`/Category/${nav.slug}`} className=" grid gap-2 border border-gray-300 p-1" >
+                    <div className="flex gap-1">
+                        <span>{nav.icon}</span>
+                        <span> {nav.nameBn}</span>
+
+                    </div>
+                    
+                 
+                </Link>)
+            }
+                 
+                </ul>
+            </div>
+            <div className="hidden md:block ">
             {
                 navs.map((nav)=> <Link key={nav.id} href={`/Category/${nav.slug}`} className="mx-4 hover:bg-[#05893E] hover:p-2 rounded-[5px] hover:text-white" >
                     <span>{nav.icon}</span>

@@ -15,12 +15,14 @@ export interface Product{
     dir: "up"|"down",
     pct: number
   },
-  markets: 
-    {
-      market: string,
+  markets: Market[]
+   
+   
+  }
+
+  export type Market={
+   market: string,
       division: string,
       min: number,
       max: number
-    }
-   
   }
