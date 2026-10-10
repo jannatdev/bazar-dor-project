@@ -2,11 +2,16 @@
 import { Navs } from './Navlinks';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Suspense } from 'react';
 
-const Navbar = ({navs}:{navs:Navs[]}) => {
+const NavbarContent = ({navs}:{navs:Navs[]}) => {
 
     const pathname = usePathname()
     return (
+
+       
+         
+
         <div className="max-w-7xl mx-auto" >
 
             <div className=" block md:hidden">
@@ -57,7 +62,24 @@ const Navbar = ({navs}:{navs:Navs[]}) => {
         </div>
 
         </div>
+
+        
+       
     );
 };
 
+
+
+const Navbar=({navs}:{navs:Navs[]})=>{
+    return(
+        <Suspense fallback={<div className='max-w-7xl mx-auto h-10'/>}>
+        <NavbarContent navs={navs}></NavbarContent>
+
+    </Suspense>
+
+    )
+    
+
+
+};
 export default Navbar;

@@ -22,7 +22,7 @@ const Navlinks = async () => {
     const navs:Navs[]= await getCategory() ;
     return (
        <div>
-        <Navbar navs={navs}></Navbar>
+        <Navbar navs={navs}/>
        </div>
         
     );

@@ -1,3 +1,4 @@
+export const instant =false;
 import { Market, Product } from "@/type";
 import Link from "next/link";
 import { notFound } from "next/navigation";

@@ -4,15 +4,17 @@ import { useEffect, useState } from "react";
 
 const DateStyle = () => {
 
-    const [date,setDate]=useState("");
-    useEffect(()=>{
-        const today:string =new Date().toLocaleDateString("bn-BD",{
-                dateStyle:"full",
-    });
-
-      setDate (today);
-        },[])
-
+   const [date,setDate]=useState("");
+        useEffect(()=>{
+            const timer = setTimeout(()=>{
+                setDate(
+                    new Date().toLocaleDateString("bn-BD",{
+                    dateStyle:"full",
+                 })
+              );   
+            },0);
+             return ()=>clearTimeout(timer);
+            },[])
      
     return (
         <div>

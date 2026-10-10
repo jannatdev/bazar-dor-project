@@ -1,5 +1,6 @@
 
 import ShortBy from "@/app/Component/ShortBy";
+import { Suspense } from "react";
 
 
 
@@ -28,13 +29,7 @@ const getCategoryProducts=async(categoryId:string)=>{
     const data= await res.json();
     return data;
 }
-
-const CategoryPage =async ({params}:Params) => {
-    const {categoryId}=await params;
-
-    const catagoryProducts =await getCategoryProducts(categoryId);
-
-    const getCategory=async()=>{
+const getCategory=async()=>{
     const res = await fetch('https://api.api-store.workers.dev/api/bazardor/categories',{
         cache:"force-cache"
     });
@@ -46,6 +41,13 @@ const CategoryPage =async ({params}:Params) => {
     return data;
     
 }
+
+const CategoryContent =async ({params}:Params) => {
+    const {categoryId}=await params;
+
+    const catagoryProducts =await getCategoryProducts(categoryId);
+
+    
      
    const categories = await getCategory()
        
@@ -85,5 +87,17 @@ const CategoryPage =async ({params}:Params) => {
         </div>
     );
 };
+ 
+  const CategoryPage= async ({params}:Params)=>{
+    return(
+        <Suspense fallback={<div className="max-w-7xl mx-auto h-10">
+            ক্যাটাগরির পণ্য লোড হচ্ছে...
+        </div>}>
+        <CategoryContent params={params} />
 
-export default CategoryPage;
+        </Suspense>
+    )
+
+
+  };
+  export default CategoryPage;
