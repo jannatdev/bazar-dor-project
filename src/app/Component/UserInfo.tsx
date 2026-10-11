@@ -58,25 +58,34 @@ const UserInfo = () => {
        
              <div>
 
-                 {user ? ( <div>
+                 {user ? ( <div className='relative block'>
                                
-                         <button className="btn border border-[#05893E]" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" } }>
-                                👤 {user?.name}
-                        </button>
+                         <button
+                              className="btn border border-[#05893E] hover:bg-[#05893E] hover:text-white"
+                              popoverTarget="profile-popover"
+                              style={{ anchorName: "--profile-anchor" } as React.CSSProperties}
+                            >
+                              👤 {user?.name}
+                          </button>
 
-                        <div className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm" popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" } }>
-                            <Link href={'/Profile'}>
-                              <button  className='btn'>এডিট প্রোফাইল</button>
-                            </Link>  
-                                
+                        <div
+                            id="profile-popover"
+                            popover="auto"
+                            className="absolute right-0 top-full z-50 mt-2 menu w-52 rounded-box bg-base-100 p-2 shadow-lg"
+                            style={{ positionAnchor: "--profile-anchor" } as React.CSSProperties}
+                          >
+                          <Link href="/Profile" className="btn">
+                            এডিট প্রোফাইল
+                          </Link>
+
                             <button
-                             onClick={handleSignOut}
-                             disabled={loading}
-                              className='btn' >
-                                {loading? "সাইন আউট হচ্ছে...":"⤶ সাইন আউট"}
-                                </button>
-                             
-                        </div>
+                              onClick={handleSignOut}
+                              disabled={loading}
+                              className="btn"
+                            >
+                              {loading ? "সাইন আউট হচ্ছে..." : "⤶ সাইন আউট"}
+                            </button>
+                          </div>
 
                          </div>):(
                             <div>

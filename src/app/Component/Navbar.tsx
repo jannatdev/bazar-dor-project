@@ -10,58 +10,42 @@ const NavbarContent = ({navs}:{navs:Navs[]}) => {
     return (
 
        
-         
+     <div className="relative block md:hidden">
+            <button
+                className="btn"
+                popoverTarget="popover-1"
+                style={{ anchorName: "--anchor-1" } as React.CSSProperties}
+            >
+                সব ক্যাটাগরি ▾
+            </button>
 
-        <div className="max-w-7xl mx-auto ml-10 md:ml-37 " >
-
-            <div className=" block md:hidden">
-                
-                <button className="btn" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" } }>
-                সব ক্যাটাগরি
-                </button>
-
-                <ul className="dropdown menu w-25 rounded-box bg-base-100 shadow-sm"
-                popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" }  }>
-                     {
-             navs.map((nav)=>{
+            <ul
+                id="popover-1"
+                popover="auto"
+                className="menu absolute left-0 top-full z-50 mt-2 w-48 rounded-box bg-base-100 p-2 shadow-lg"
+                style={{ positionAnchor: "--anchor-1" } as React.CSSProperties}
+            >
+                {navs.map((nav) => {
                 const isActive = pathname === `/Category/${nav.slug}`;
-                return(
-                    <Link key={nav.id} href={`/Category/${nav.slug}`} className={`${isActive ? "bg-[#047F39] px-2 py-2 rounded-xl text-white":""} grid gap-3 border border-gray-200 p-1`} >
-                       <div className='flex gap-1'>
-                         <span>{nav.icon}</span>
-                        <span> {nav.nameBn}</span>
 
-                       </div>
-                       
-                    </Link>
-
-                )
-
-             })
-            }
-                 
-                </ul>
-            </div>
-            <div className="hidden md:block ">
-            {
-             navs.map((nav)=>{
-                const isActive = pathname === `/Category/${nav.slug}`;
-                return(
-                    <Link key={nav.id} href={`/Category/${nav.slug}`} className={`${isActive ? "bg-[#047F39] px-2 py-2 rounded-xl text-white":""} mx-2`} >
-                    
+                return (
+                    <li key={nav.id}>
+                    <Link
+                        href={`/Category/${nav.slug}`}
+                        className={`flex items-center gap-2 ${
+                        isActive
+                            ? "rounded-xl bg-[#047F39] text-white"
+                            : "text-gray-700"
+                        }`}
+                    >
                         <span>{nav.icon}</span>
-                        <span> {nav.nameBn}</span>
+                        <span>{nav.nameBn}</span>
                     </Link>
-
-                )
-
-             })
-            }
-
-            
-        </div>
-
-        </div>
+                    </li>
+                );
+                })}
+            </ul>
+      </div>
 
         
        
