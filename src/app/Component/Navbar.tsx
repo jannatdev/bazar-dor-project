@@ -12,7 +12,7 @@ const NavbarContent = ({navs}:{navs:Navs[]}) => {
        
          
 
-        <div className="max-w-7xl mx-auto" >
+        <div className="max-w-7xl mx-auto ml-10 md:ml-37 " >
 
             <div className=" block md:hidden">
                 

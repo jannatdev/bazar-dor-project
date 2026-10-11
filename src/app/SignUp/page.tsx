@@ -6,7 +6,7 @@ import google from "@/app/asset/icons8-google-48.png";
 import github from '@/app/asset/github-logo.png'
 import Link from "next/link";
 import toast from "react-hot-toast";
-import { redirect } from "next/dist/server/api-utils";
+
 
 
 const SignUpPage = () => {
@@ -23,13 +23,12 @@ const SignUpPage = () => {
       })
     
       if(data){
-        console .log(data);
-        redirect('/');
-        toast.success("সাইন আপ সফল হয়েেছ ।")
+         toast.success("সাইন আপ সফল হয়েেছ ।")
+          e.currentTarget.reset();
         
       }
       if(error){
-        console.log(error);
+     
         toast.error("এই একাউন্টি ইতিমধ্যে সাইন আপ করা হয়েছে")
       }
       

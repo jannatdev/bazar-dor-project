@@ -18,7 +18,7 @@ const Header = () => {
 
    
  return (
-        <div className='bg-white py-5'>
+        <div className='bg-base-200 py-5'>
              <div className='max-w-7xl mx-auto'>
                 <div className=' flex justify-between items-center mx-10'>
                     <Link href={'/'} >

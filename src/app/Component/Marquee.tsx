@@ -17,17 +17,18 @@ const res = await fetch('https://api.abcz.workers.dev/api/bazardor/products',{
     const data= await res.json();
 
     const headlines:Product[]=data
+    const formatePrice=(price:number)=> price.toLocaleString("bn-BD");
 
 return (
 
        <div className=' '>
-             <MarqueeText className='bg-gray-50 -mt-3 ' direction='right' duration={20}>
+             <MarqueeText className='bg-base-200 -mt-3 ' direction='right' duration={20}>
             {
                 headlines.map(product=> {
                       const isUp= product.change.dir ==="up";
 
                       return(
-                        <Link key={product.id} href={`/Products/${product.slug}`} className='border  border-gray-200 py-4'>
+                        <Link key={product.id} href={`/Products/${product?.slug}`} className='border  border-gray-200 py-4 px-2'>
 
                    
                             <span>{product.image}</span>
@@ -39,11 +40,11 @@ return (
                                     ? "bg-green-50 text-red-500"
                                     : "bg-green-50 text-green-600"
                                 } ml-1 mr-2`} >
-                                    <span className="mr-2">
+                                    <span className="mr-1 text-[10px]">
                                     {isUp ? "▲" : "▼"}
                                 </span>
 
-                                {product.change.pct}%
+                                {formatePrice(product.change.pct)}%
                                 </span>
                         
                   

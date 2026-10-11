@@ -24,7 +24,7 @@ export default async function Home() {
     <div className="max-w-7xl mx-auto">
       <Banner/>
     {/* দাম বেড়েছে */}
-      <div className="mt-10">
+      <div className="mt-10" id="products">
           <div className="flex items-center gap-2">
               <span className="text-red-500 text-xl">▲</span>
               <h2 className="text-[20px] font-bold">আজ দাম বেড়েছে</h2>
@@ -32,7 +32,8 @@ export default async function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
             {
-              upProducts.slice(0,6).map((product:Product)=> <ProductCard key={product.id} product={product}/>)
+              upProducts.sort((a:Product,b:Product)=> b.change.pct-a.change.pct)
+              .slice(0,6).map((product:Product)=> <ProductCard key={product.id} product={product}/>)
             }
           </div>
         
@@ -47,7 +48,8 @@ export default async function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
             {
-              downProducts.slice(0,6).map((product:Product)=> <ProductCard key={product.id} product={product}/>)
+              downProducts.sort((a:Product,b:Product)=> b.change.pct-a.change.pct)
+              .slice(0,6).map((product:Product)=> <ProductCard key={product.id} product={product}/>)
             }
           </div>
         
@@ -58,7 +60,7 @@ export default async function Home() {
           <div className="">
           
               <h2 className="text-[20px] font-bold">সব পণ্য</h2>
-              <p>মোট {products.length}টি পণ্য দেখানো হচ্ছে</p>
+              <p className="text-[14px] text-[#464c47]gray-500">মোট {products.length}টি পণ্য দেখানো হচ্ছে</p>
 
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">

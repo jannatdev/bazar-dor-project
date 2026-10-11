@@ -32,7 +32,7 @@ const ShortBy = ({catagoryProducts}:{catagoryProducts:Product[]}) => {
                 <div className='max-w-7xl mx-auto '>
                     <div className=' bg-white my-10 py-6 px-4 text-center md:text-right'>
                          <button className='mr-4'>সাজান</button>
-                         <select defaultValue="ডিফল্ট"
+                         <select defaultValue="shortBy"
                             value={shortby}
                             onChange={(e:React.ChangeEvent<HTMLSelectElement>)=> setShortBy(e.target.value as "up"|"down"|"")}
                    

@@ -52,7 +52,7 @@ const CategoryContent =async ({params}:Params) => {
    const categories = await getCategory()
        
   const currentCategory= categories.find((category:CategoryProduct)=> category.slug===categoryId)
-   console .log(currentCategory)
+ 
    if(!currentCategory){
     return <div>Category not Found</div>
    }

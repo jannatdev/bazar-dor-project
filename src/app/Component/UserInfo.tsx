@@ -7,6 +7,7 @@ import { authClient, signOut } from '@/lib/auth-client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 
 
@@ -33,6 +34,7 @@ const UserInfo = () => {
             {
             fetchOptions: {
               onSuccess: () => {
+                toast.error(" User সাইন আউট  হয়েেছ ।")
                 setSignedOut(true)
                 router.replace("/"); 
                 router.refresh();

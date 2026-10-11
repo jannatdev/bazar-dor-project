@@ -5,6 +5,7 @@ import { signOut, updateUser } from "@/lib/auth-client";
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 
 const ProfilePage = () => {
@@ -35,6 +36,7 @@ const ProfilePage = () => {
             {
             fetchOptions: {
               onSuccess: () => {
+                toast.error(" User সাইন আউট  হয়েেছ ।")
                 setSignedOut(true)
                 router.replace("/"); 
                 router.refresh();

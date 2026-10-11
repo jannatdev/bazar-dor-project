@@ -26,8 +26,12 @@ const Banner = () => {
                 
                  
                 <h2 className='text-[32px] md:text-[40px] font-bold'>আজকের বাজারের দাম এক নজরে</h2>
-                <p className="text-[#3e4740]  w-full md:w-98">চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।</p>
-                <button className="bg-[#047F39] px-5 py-2 rounded-xl text-[14px] text-white font-bold mt-6">সব পণ্য দেখুন</button>
+                <p className="text-gray-500  w-full md:w-98">চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।</p>
+                <a href="#products">
+                    <button className="bg-[#047F39] px-5 py-2 rounded-xl text-[14px] text-white font-bold mt-6">সব পণ্য দেখুন</button>
+
+                </a>
+                
 
             
            </div>

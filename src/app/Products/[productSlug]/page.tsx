@@ -1,4 +1,4 @@
-export const instant =false;
+
 import { Market, Product } from "@/type";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,45 +10,49 @@ interface PParams{
 }
 
    const getProducts=async():Promise<Product[]>=>{
-    const res = await fetch('https://api.abcz.workers.dev/api/bazardor/products',{
-        cache:"force-cache"
+
+    
+        const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products",{
+        cache:"no-store",
     })
+
+
     if(!res.ok){
         throw new Error(`Failed to fetch Product:${res.status}`)
     }
    
     const data =await res.json();
-    const products = Array.isArray(data)
-    ? data
-    : data.data;
-
-  if (!Array.isArray(products)) {
-    throw new Error("Invalid products API response");
-  }
-
-  return products;
-};
-
+    return Array.isArray(data) ?data : data.data ?? [];
+    
+   }
 const ProductDetailPage =async ({params}:PParams) => {
     
     const {productSlug}=await params;
+  
 
-    const products = await getProducts();
+   
+   
+     const products = await getProducts();
+     
 
-    const product=products.find((item:Product)=> item.slug===productSlug)
+  const product=products.find((item:Product)=> item.slug===productSlug)
+ 
      if(!product){
+       
         notFound();
      }
 
     const formatePrice=(price:number)=> price.toLocaleString("bn-BD");
 
    const isUp= product.change.dir ==="up";
+
    const markets=product.markets
 
    const lowestPrice=Math.min(...markets.map((market:Market)=> market.min));
    const heighestPrice=Math.max(...markets.map((market:Market)=> market.max));
    const averagePrice =Math.round ((lowestPrice+heighestPrice)/2)
    const getAverage= (market:Market)=>Math.round((market.min+market.max)/2)
+   
 
   
 
@@ -103,7 +107,7 @@ const ProductDetailPage =async ({params}:PParams) => {
                             {isUp ? "▲" : "▼"}
                         </span>
 
-                        {product.change.pct}%
+                        {formatePrice(product.change.pct)}%
                     </div>
                 </div>
                 
@@ -177,5 +181,5 @@ const ProductDetailPage =async ({params}:PParams) => {
        
     );
 };
-
+   
 export default ProductDetailPage;

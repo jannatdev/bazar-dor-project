@@ -1,11 +1,11 @@
 "use client";
-import { signIn, signUp } from "@/lib/auth-client";
+import { signIn } from "@/lib/auth-client";
 import { Fieldset, Form } from "@heroui/react";
 import Image from "next/image";
 import google from "@/app/asset/icons8-google-48.png";
 import github from '@/app/asset/github-logo.png'
 import Link from "next/link";
-import { redirect } from "next/dist/server/api-utils";
+
 import toast from "react-hot-toast";
 
 
@@ -24,7 +24,7 @@ const SignInPage = () => {
     
       if(data){
         console .log(data);
-        redirect('/');
+       
         toast.success("সাইন ইন সফল হয়েেছ ।")
       }
       if(error){

@@ -5,16 +5,16 @@ import Link from "next/link";
 const ProductCard = ({product}:{product:Product}) => {
 
     const isUp= product.change.dir ==="up";
-    // const isDown =product.change.dir==="down";
+    
     
 
-    
+    const formatePrice=(price:number)=> price.toLocaleString("bn-BD");
 
 
     return (
 
-        <Link href={`/Products/${product.slug}`}>
-            <div className="w-full  rounded-2xl border border-gray-200 bg-gray-50 px-4 py-6 shadow-sm">
+        <Link href={`/Products/${product?.slug}`}>
+            <div className="w-full  rounded-2xl border border-gray-200 bg-base-200 px-4 py-6 shadow-sm">
       {/* Product information */}
                 <div className="flex items-center gap-2">
                     {/* Product Icon */}
@@ -41,7 +41,7 @@ const ProductCard = ({product}:{product:Product}) => {
                     <p className="text-xs text-gray-600">আজকের দাম</p>
 
                     <p className="mt-0.5 text-xl font-bold text-gray-900">
-                        {product.today} টাকা
+                        {formatePrice(product.today)} টাকা
                     </p>
                     </div>
 
@@ -53,11 +53,11 @@ const ProductCard = ({product}:{product:Product}) => {
                         : "bg-green-50 text-green-600"
                     }`}
                     >
-                    <span className="mr-1">
+                    <span className="mr-1 text-[10px]">
                         {isUp ? "▲" : "▼"}
                     </span>
 
-                    {product.change.pct}%
+                    {formatePrice(product.change.pct)}%
                     </div>
                 </div>
           </div>
