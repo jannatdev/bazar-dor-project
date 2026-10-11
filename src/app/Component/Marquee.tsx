@@ -1,13 +1,15 @@
 
-import { Product } from '@/type';
-import Link from 'next/link';
+
+
+
 import MarqueeText from 'react-marquee-text';
 import "react-marquee-text/dist/styles.css";
+import { Product } from '@/type';
+import Link from 'next/link';
 
 
-
-const Marquee = async() => {
-    const res = await fetch('https://api.api-store.workers.dev/api/bazardor/products',{
+const Marquee =async()=>{
+const res = await fetch('https://api.abcz.workers.dev/api/bazardor/products',{
         cache:"force-cache"
     }
        
@@ -16,21 +18,16 @@ const Marquee = async() => {
 
     const headlines:Product[]=data
 
-  
-    
+return (
 
-    return (
-
-        
-        <div className='bg-white'>
-           
-               <MarqueeText className=' ' direction='right' duration={20}>
+       <div className=' '>
+             <MarqueeText className='bg-gray-50 -mt-3 ' direction='right' duration={20}>
             {
                 headlines.map(product=> {
                       const isUp= product.change.dir ==="up";
 
                       return(
-                        <Link  key={product.id} href={`/Products/${product.slug}`} className='border border-gray-200 py-4 '>
+                        <Link key={product.id} href={`/Products/${product.slug}`} className='border  border-gray-200 py-4'>
 
                    
                             <span>{product.image}</span>
@@ -61,10 +58,13 @@ const Marquee = async() => {
             }
       
           </MarqueeText>
+            
+        </div>
+        
+           
           
            
-        </div>
+       
     );
 };
-
 export default Marquee;

@@ -10,16 +10,15 @@ export interface Navs{
 
 
 const getCategory=async()=>{
-    const res = await fetch('https://api.api-store.workers.dev/api/bazardor/categories',{
+    const res = await fetch('https://api.abcz.workers.dev/api/bazardor/categories',{
         cache:"force-cache"
     });
-    const data =await res.json();
-    return data;
-}
 
+    const data= await res.json();
+    return data
+}
 const Navlinks = async () => {
-    
-    const navs:Navs[]= await getCategory() ;
+        const navs:Navs[]= await getCategory() ;
     return (
        <div>
         <Navbar navs={navs}/>
@@ -28,4 +27,4 @@ const Navlinks = async () => {
     );
 };
 
-export default Navlinks;
+export default Navlinks; 

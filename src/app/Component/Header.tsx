@@ -6,9 +6,15 @@ import Navlinks from './Navlinks';
 import Link from 'next/link';
 import DateStyle from './DateStyle';
 
+import UserInfo from './UserInfo';
+
 
 
 const Header = () => {
+
+     
+
+
 
    
  return (
@@ -31,11 +37,8 @@ const Header = () => {
                             </div>
                         </div>
                     </Link>
-                        
-                        <div>
-                            <button className='py-2 px-5'>সাইন ইন</button>
-                            <button className='bg-[#05893E] text-white py-2 px-5 rounded-[5px]'>সাইন আপ</button>
-                        </div>
+                    <UserInfo></UserInfo> 
+                       
                 </div >
                 
                 
