@@ -10,7 +10,7 @@ export async function proxy(request: NextRequest) {
     })
 
     const user = session?.user
-
+    console.log(user)
     if(!user){
         return NextResponse.redirect(new URL('/home', request.url))
     }
