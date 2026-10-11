@@ -41,6 +41,15 @@ const SignUpPage = () => {
         toast.success("সাইন ইন সফল হয়েেছ ।")
 
       }
+      const handleGithubSignIn=async()=>{
+            await signIn.social({
+              provider:"github",
+              callbackURL: "/",
+
+            })
+             toast.success("সাইন ইন সফল হয়েেছ ।")
+    
+          }
     
     return (
 
@@ -90,9 +99,11 @@ const SignUpPage = () => {
                         <Image src={google} alt="icon" width={16} height={16}/>
                         Google দিয়ে চালিয়ে যান
                         </button>
-                      <button className="btn flex items-center gap-4 text-[14px] text-[#1D271F] font-semibold">
+                      <button 
+                      onClick={handleGithubSignIn}
+                      className="btn flex items-center gap-4 text-[14px] text-[#1D271F] font-semibold">
                         <Image src={github} alt="icon" width={16} height={16}/>
-                        Google দিয়ে চালিয়ে যান
+                        Github দিয়ে চালিয়ে যান
                         </button>
 
                   </div>

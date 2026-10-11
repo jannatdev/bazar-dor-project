@@ -79,7 +79,7 @@ const ProfilePage = () => {
                 <button
                              onClick={handleSignOut}
                              disabled={loading}
-                              className='btn' >
+                              className='btn border border-red-500 text-red-500' >
                                 {loading? "সাইন আউট হচ্ছে...":"⤶ সাইন আউট"}
                                 </button>
                              
