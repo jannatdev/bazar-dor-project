@@ -9,6 +9,7 @@ const ProductCard = ({product}:{product:Product}) => {
     
 
     const formatePrice=(price:number)=> price.toLocaleString("bn-BD");
+    const formateUnit=(unit:string)=>unit.toLocalString("bn-BD");
 
 
     return (
@@ -29,8 +30,14 @@ const ProductCard = ({product}:{product:Product}) => {
                     </h3>
 
                     <p className="text-sm text-gray-500">
-                        প্রতি {product.unit === "kg" ? "কেজি" : product.unit}
-                    </p>
+                        {/* প্রতি {product.unit === "kg" ? "কেজি" : product.unit} */}
+                         প্রতি {{kg: "কেজি",
+                              liter: "লিটার",
+                              piece: "পিস",
+                              dozen: "ডজন",}
+                              [product.unit] ||product.unit
+                              } </p>
+                   
                     </div>
                 </div>
 

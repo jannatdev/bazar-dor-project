@@ -62,7 +62,7 @@ const SignInPage = () => {
 
             </div>
             
-            <Form className="flex w-96 flex-col gap-4 max-w-7xl mx-auto mt-5" onSubmit={onSubmit}>
+            <Form className="flex w-100 flex-col gap-4 max-w-7xl mx-auto mt-5" onSubmit={onSubmit}>
               <Fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-md border p-4">
                  
 
@@ -86,7 +86,7 @@ const SignInPage = () => {
             </Fieldset>
 
             </Form>
-               <div className="bg-base-200  w-120 ml-142 max-w-7xl mx-auto py-4">
+               <div className="bg-base-200  w-120  ml-22 md:ml-140 max-w-7xl mx-auto py-4">
                 <div className="flex gap-4 ml-8">
                      <button
                      onClick={handleGoogleSignIn}

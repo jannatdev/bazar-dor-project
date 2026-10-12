@@ -10,41 +10,67 @@ const NavbarContent = ({navs}:{navs:Navs[]}) => {
     return (
 
        
-     <div className="relative block md:hidden">
-            <button
-                className="btn"
-                popoverTarget="popover-1"
-                style={{ anchorName: "--anchor-1" } as React.CSSProperties}
-            >
-                সব ক্যাটাগরি ▾
-            </button>
+     <div className="max-w-7xl mx-auto">
+         
+              <div className="  dropdown dropdown-bottom block md:hidden">
+                    <div tabIndex={0} role="button" className="btn m-1">সব ক্যাটাগরি ▾</div>
+                    <div tabIndex={-1} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                        {navs.map((nav:Navs) => {
+                        const isActive = pathname === `/Category/${nav.slug}`;
 
-            <ul
-                id="popover-1"
-                popover="auto"
-                className="menu absolute left-0 top-full z-50 mt-2 w-48 rounded-box bg-base-100 p-2 shadow-lg"
-                style={{ positionAnchor: "--anchor-1" } as React.CSSProperties}
-            >
-                {navs.map((nav) => {
-                const isActive = pathname === `/Category/${nav.slug}`;
+                        return (
+                           
+                            <Link key={nav.id}
+                                href={`/Category/${nav.slug}`}
+                                className={`ml-8 flex items-center gap-2 border border-gray-200 p-1 ${
+                                isActive
+                                    ? "rounded-xl bg-[#047F39] text-white p-4"
+                                    : "text-gray-700"
+                                }`}
+                            >
+                                <span>{nav.icon}</span>
+                                <span>{nav.nameBn}</span>
+                            </Link>
+                            
 
-                return (
-                    <li key={nav.id}>
-                    <Link
-                        href={`/Category/${nav.slug}`}
-                        className={`flex items-center gap-2 ${
-                        isActive
-                            ? "rounded-xl bg-[#047F39] text-white"
-                            : "text-gray-700"
-                        }`}
-                    >
-                        <span>{nav.icon}</span>
-                        <span>{nav.nameBn}</span>
-                    </Link>
-                    </li>
-                );
-                })}
-            </ul>
+
+                        
+                        );
+                        })}
+
+                    </div>
+              </div>
+         
+           
+
+
+            <div className='hidden md:flex gap-4'>
+            
+                     {navs.map((nav:Navs) => {
+                        const isActive = pathname === `/Category/${nav.slug}`;
+
+                        return (
+                           
+                            <Link key={nav.id}
+                                href={`/Category/${nav.slug}`}
+                                className={`ml-8 flex items-center gap-2 ${
+                                isActive
+                                    ? "rounded-xl bg-[#047F39] text-white p-4"
+                                    : "text-gray-700"
+                                }`}
+                            >
+                                <span>{nav.icon}</span>
+                                <span>{nav.nameBn}</span>
+                            </Link>
+                            
+
+
+                        
+                        );
+                        })}
+
+          
+            </div>
       </div>
 
         

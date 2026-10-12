@@ -12,9 +12,9 @@ const ProfilePage = () => {
     const {data:session, isPending} =authClient.useSession();
     const[signedOut,setSignedOut]=useState(false)
       const [loading,setLoading] =useState(false)
-    const router = useRouter();
+      const router = useRouter();
     
-        const user=signedOut ? null : session?.user;
+        const user= session?.user;
 
      const handleUpdateProfile=async(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
@@ -27,6 +27,7 @@ const ProfilePage = () => {
             })
            
      }
+       
        const handleSignOut = async()=>{
 
         try{ 
@@ -60,18 +61,18 @@ const ProfilePage = () => {
     return (
 
  
-            <div>
-             <div className="text-center mt-10 ">
+        <div className='max-w-7xl mx-auto'>
+             <div className="text-center mt-10  ">
                 <h2 className="text-[24px] text-[#1D271F] font-bold">আমার প্রোফাইল</h2>
                 <p className="text-[14px] text-[#323934]">আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
 
             </div>
-            <div className='max-w-7xl mx-auto flex justify-between items-center  w-120 ml-145 bg-base-200 p-5 mt-5 '>
-                <div className='flex gap-4'>
+            <div className='max-w-7xl mx-auto flex justify-between items-center gap-5 w-100 md:w-118  ml-20 md:ml-112 bg-base-200 p-5 mt-5 '>
+                <div className='flex gap-4  '>
                     <span className='text-4xl'>🪪</span>
                     <div>
-                        <h2 className='text-[20px] font-bold'>{user?.name}</h2>
-                        <p className='text-[#3e4740] text-[14px]'>{user?.email}</p>
+                        <h2 className='text-[16px] md:text-[20px] font-bold'>{user?.name}</h2>
+                        <p className='text-[#3e4740] text-[12px] md:text-[14px]'>{user?.email}</p>
                     </div>
 
                 </div>
@@ -87,11 +88,11 @@ const ProfilePage = () => {
                 
             </div>
                <Form className="flex w-96 flex-col gap-4 max-w-7xl mx-auto mt-5" onSubmit={handleUpdateProfile}>
-                            <Fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-md border p-4">
+                            <Fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-sm md:w-md border p-4">
                                
               
                                   <label className="label text-[14px] text-[#1D271F] font-medium">নাম</label>
-                                   <input name="name" type="text" className="input w-md" placeholder="নাম" />
+                                   <input name="name" type="text" className="input w-sm md:w-md" placeholder="নাম" />
               
                                  
               

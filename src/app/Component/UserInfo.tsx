@@ -10,9 +10,6 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 
 
-
-
-
 const UserInfo = () => {
   const {data:session , isPending} =authClient.useSession();
 
