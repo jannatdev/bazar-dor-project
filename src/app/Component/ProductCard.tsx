@@ -9,7 +9,7 @@ const ProductCard = ({product}:{product:Product}) => {
     
 
     const formatePrice=(price:number)=> price.toLocaleString("bn-BD");
-    const formateUnit=(unit:string)=>unit.toLocalString("bn-BD");
+    
 
 
     return (
