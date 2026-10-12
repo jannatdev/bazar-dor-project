@@ -28,8 +28,6 @@
     The website is designed to work across desktops, tables and mobile devices, ensuring a convenient browsing experience on different screen sizes.
 
 ### 5. User Authentication-
-<<<<<<< HEAD
     The application integrates Better Auth to support user registration and sign-in, including Google and Github 0Auth authentication.
-=======
-    The application integrates Better Auth to support user registration and sign-in, including Google and Github 0Auth authentication.
->>>>>>> 83f5b26dfa715a44e7d9196f62b431e266b572ab
+
+  
