@@ -40,8 +40,9 @@ const UserInfo = () => {
         );
       }catch (error){
         console.error('Sign out Failed', error)
+        toast.error('সাইন আউট করার সময় সমস্যা হয়েছে।');
       }finally{
-        setLoading(false)
+        setLoading(false);
       }
       
     } 
@@ -49,7 +50,7 @@ const UserInfo = () => {
        if(isPending && !signedOut){
         return <div> Loading...</div>
        }
-         
+        
    
     return (
        

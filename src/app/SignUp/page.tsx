@@ -29,7 +29,7 @@ const SignUpPage = () => {
       }
       if(error){
      
-        toast.error("এই একাউন্টি ইতিমধ্যে সাইন আপ করা হয়েছে")
+        toast.error("সাইন আপ করার সময় সমস্যা হয়েছে।")
       }
       
     }
@@ -91,7 +91,7 @@ const SignUpPage = () => {
                 </Fieldset>
 
             </Form>
-              <div className="bg-base-200  w-120 ml-15 md:ml-140 max-w-7xl mx-auto py-4">
+              <div className="bg-base-200  w-120 ml-18 md:ml-140 max-w-7xl mx-auto py-4">
                 <div className="flex gap-4 ml-8">
                      <button
                      onClick={handleGoogleSignIn}

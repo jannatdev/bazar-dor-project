@@ -86,7 +86,7 @@ const SignInPage = () => {
             </Fieldset>
 
             </Form>
-               <div className="bg-base-200 w-120 ml-19 md:ml-110 max-w-7xl mx-auto py-4">
+               <div className="bg-base-200 w-120 ml-23 md:ml-110 max-w-7xl mx-auto py-4">
                 <div className="flex gap-4 ml-8">
                      <button
                      onClick={handleGoogleSignIn}

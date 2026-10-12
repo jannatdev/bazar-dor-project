@@ -53,7 +53,7 @@ const NavbarContent = ({navs}:{navs:Navs[]}) => {
                            
                             <Link key={nav.id}
                                 href={`/Category/${nav.slug}`}
-                                className={`ml-8 flex items-center gap-2 ${
+                                className={` flex items-center gap-2 ${
                                 isActive
                                     ? "rounded-xl bg-[#047F39] text-white p-4"
                                     : "text-gray-700"

@@ -37,7 +37,7 @@ const ProfilePage = () => {
             {
             fetchOptions: {
               onSuccess: () => {
-                toast.error(" User সাইন আউট  হয়েেছ ।")
+                toast.success(" প্রোফাইল থেকে সাইন আউট  হয়েেছ ।")
                 setSignedOut(true)
                 router.replace("/"); 
                 router.refresh();
@@ -46,6 +46,7 @@ const ProfilePage = () => {
         );
       }catch (error){
         console.error('Sign out Failed', error)
+        toast.error(" সাইন আউট করার সময় সমস্যা হয়েছে।")
       }finally{
         setLoading(false)
       }
@@ -56,6 +57,9 @@ const ProfilePage = () => {
         return <div> Loading...</div>
        }
          
+      //  if (signedOut || !session){
+      //   return null;
+      //  }
        
          
     return (
@@ -67,7 +71,7 @@ const ProfilePage = () => {
                 <p className="text-[14px] text-[#323934]">আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
 
             </div>
-            <div className='max-w-7xl mx-auto flex justify-between items-center gap-5 w-103 md:w-118  ml-16 md:ml-112 bg-base-200 p-5 mt-5 '>
+            <div className='max-w-7xl mx-auto flex justify-between items-center gap-5 w-103 md:w-118  ml-20 md:ml-112 bg-base-200 p-5 mt-5 '>
                 <div className='flex gap-4  '>
                     <span className='text-4xl'>🪪</span>
                     <div>

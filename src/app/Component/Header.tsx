@@ -20,7 +20,7 @@ const Header = () => {
  return (
         <div className='bg-base-200 py-5'>
              <div className='max-w-7xl mx-auto'>
-                <div className=' flex justify-between items-center mx-10'>
+                <div className=' flex justify-between items-center mr-10 md:mr-0'>
                     <Link href={'/'} >
                         <div className='flex items-center gap-2'>
                             <Image 
