@@ -55,22 +55,22 @@ const SignInPage = () => {
     
     return (
 
-        <div>
+        <div className="max-w-7xl mx-auto">
             <div className="text-center mt-10 ">
                 <h2 className="text-[24px] text-[#1D271F] font-bold">সাইন ইন</h2>
                 <p className="text-[14px] text-[#323934]">বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।</p>
 
             </div>
             
-            <Form className="flex w-100 flex-col gap-4 max-w-7xl mx-auto mt-5" onSubmit={onSubmit}>
-              <Fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-md border p-4">
+            <Form className="flex w-90 md:w-100 flex-col gap-4 max-w-7xl mx-auto mt-5" onSubmit={onSubmit}>
+              <Fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full md:w-md border p-4">
                  
 
                     <label className="label text-[14px] text-[#1D271F] font-medium">ইমেইল</label>
-                     <input name="email" type="email" className="input w-md" placeholder="you@example.com" />
+                     <input name="email" type="email" className="input w-full md:w-md" placeholder="you@example.com" />
 
                      <label className="label text-[14px] text-[#1D271F] font-medium">পাসওয়ার্ড</label>
-                    <input name="password" type="password" className="input w-md " placeholder="কমপক্ষে ৮ অক্ষর" />
+                    <input name="password" type="password" className="input w-sm md:w-md " placeholder="কমপক্ষে ৮ অক্ষর" />
 
                     
 
@@ -86,7 +86,7 @@ const SignInPage = () => {
             </Fieldset>
 
             </Form>
-               <div className="bg-base-200  w-120  ml-22 md:ml-140 max-w-7xl mx-auto py-4">
+               <div className="bg-base-200  w-120  ml-30 md:ml-140 max-w-7xl mx-auto py-4">
                 <div className="flex gap-4 ml-8">
                      <button
                      onClick={handleGoogleSignIn}

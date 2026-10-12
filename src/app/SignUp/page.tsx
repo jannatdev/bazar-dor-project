@@ -91,7 +91,7 @@ const SignUpPage = () => {
                 </Fieldset>
 
             </Form>
-              <div className="bg-base-200  w-120 ml-22 md:ml-140 max-w-7xl mx-auto py-4">
+              <div className="bg-base-200  w-120 ml-25 md:ml-140 max-w-7xl mx-auto py-4">
                 <div className="flex gap-4 ml-8">
                      <button
                      onClick={handleGoogleSignIn}
