@@ -70,7 +70,7 @@ const SignInPage = () => {
                      <input name="email" type="email" className="input w-full md:w-md" placeholder="you@example.com" />
 
                      <label className="label text-[14px] text-[#1D271F] font-medium">পাসওয়ার্ড</label>
-                    <input name="password" type="password" className="input w-sm md:w-md " placeholder="কমপক্ষে ৮ অক্ষর" />
+                    <input name="password" type="password" className="input w-full md:w-md " placeholder="কমপক্ষে ৮ অক্ষর" />
 
                     
 
@@ -86,7 +86,7 @@ const SignInPage = () => {
             </Fieldset>
 
             </Form>
-               <div className="bg-base-200  w-120  ml-30 md:ml-140 max-w-7xl mx-auto py-4">
+               <div className="bg-base-200 w-120 ml-25 md:ml-110 max-w-7xl mx-auto py-4">
                 <div className="flex gap-4 ml-8">
                      <button
                      onClick={handleGoogleSignIn}

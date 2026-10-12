@@ -67,7 +67,7 @@ const ProfilePage = () => {
                 <p className="text-[14px] text-[#323934]">আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
 
             </div>
-            <div className='max-w-7xl mx-auto flex justify-between items-center gap-5 w-103 md:w-118  ml-27 md:ml-112 bg-base-200 p-5 mt-5 '>
+            <div className='max-w-7xl mx-auto flex justify-between items-center gap-5 w-103 md:w-118  ml-22 md:ml-112 bg-base-200 p-5 mt-5 '>
                 <div className='flex gap-4  '>
                     <span className='text-4xl'>🪪</span>
                     <div>
